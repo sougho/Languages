@@ -7,6 +7,7 @@ func main() {
 	// Not the length, unlike arrays
 	// Slice looks like an arraylist,
 	// with slice operator
+	// Type of int slice is []int
 
 	s:= make([]string, 3)
 	fmt.Println(s)
@@ -34,6 +35,10 @@ func main() {
 	c=s[:3]
 	fmt.Println(c)
 
+	// 1,2,3	
+	c=s[1:]
+	fmt.Println(c)
+
 	// Short declaration for slice
 	t:=[]string {"a", "b", "c"}
 	fmt.Println(t)
@@ -50,4 +55,28 @@ func main() {
         }
     }
     fmt.Println("2d: ", twoD)
+
+    // Slice with len and capacity
+
+    var p []int8
+    p = make([]int8, 5, 10)
+    fmt.Println(p, len(p), cap(p))
+	
+    // Nil Slice
+    p = nil
+    fmt.Println(p, len(p), cap(p))
+
+    // Create a slice from an array
+    m := [3]int {1,2,3}
+    sl 	:= m[:]
+    fmt.Println(sl)
+
+    // Changing slice changes the original underlying array
+    // Since slice points to the same data area
+
+    p1 := [] int {1,2,3,4,5,6,7,8}
+    p2 := p1[0:3]
+    fmt.Println(p1)
+    p2[0] = 99
+    fmt.Println(p1)
 }
