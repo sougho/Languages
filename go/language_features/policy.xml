@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:PolicyDefinition type="SECURITY" order="2" flow="REQUEST" context="ESB_AND_SERVICE"
+	xmlns:p="http://platform.walmart.com/soa/policy/definition/model"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://platform.walmart.com/soa/policy/definition/model policy-schema.xsd ">
+	<Rule id="useridvalidation-orderlookup">
+		<if leftTerm="REQUEST_HTTP_URI" op="!=" rightTerm="null"/>
+		<then>
+			<action>
+				<type>VALIDATE_USER</type>
+				<value>true</value>
+			</action>
+		</then>
+	</Rule>
+</p:PolicyDefinition>
