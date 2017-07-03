@@ -1,0 +1,24 @@
+package bssics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Varargs {
+	
+	public static <T> List<T> toList(T ... elts) {
+		
+		List<T> retLst = new ArrayList<T>();
+		for (T elt : elts) {
+			retLst.add(elt);
+		}
+		return retLst;
+	}
+	
+	public static void main(String[] args) {
+		List<Integer> ints = toList(1,2,3);
+		System.out.println(ints);
+		List<String> strs = toList("1", "2", "3");
+		System.out.println(strs);
+	}
+
+}

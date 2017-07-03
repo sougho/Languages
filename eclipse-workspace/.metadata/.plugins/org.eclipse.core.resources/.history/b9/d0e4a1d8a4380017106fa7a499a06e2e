@@ -1,0 +1,16 @@
+package bssics;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+public class  ExtendsP <T> implements Collection{
+	
+	@Override
+	public static <T> List<T> addAll(Collection<? extends T> elts) {
+		List<T> lst = new ArrayList<>();
+		return null;
+	}
+
+}

@@ -1,0 +1,12 @@
+package bssics;
+
+import java.util.Collection;
+import java.util.List;
+
+public class ExtendsP {
+	
+	public static <T> List<T> addAll(Collection<? extends T> elts) {
+		return null;
+	}
+
+}
