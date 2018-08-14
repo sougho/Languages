@@ -8,9 +8,8 @@ import java.util.Optional;
 import org.junit.Test;
 
 
-public class OptionalTest {
+public class OptionalLrn {
 
-	@Test
 	public void optionalTest() {
 		Optional<String> opt1 = Optional.empty();
 		try {
@@ -105,6 +104,11 @@ public class OptionalTest {
 		
 		// Flatmap
 		
+		Optional<String> opt7 = Optional.ofNullable("SOUMEN");
+		
+		System.out.println(opt7.map(String::length));
+		System.out.println(opt7.flatMap(OptionalLrn::wrapInOpt));
+		
 		
 		
 	}
@@ -114,4 +118,11 @@ public class OptionalTest {
 		return "Default";
 	}
 
+	public static Optional<Integer> wrapInOpt(String s) {
+		return Optional.ofNullable(s.length());
+	}
+	
+	public static void main(String[] args) {
+		new OptionalLrn().optionalTest();
+	}
 }
