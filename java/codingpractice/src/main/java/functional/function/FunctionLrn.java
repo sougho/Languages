@@ -71,6 +71,11 @@ public class FunctionLrn {
 		Function<Integer, Integer> add421 = funcFactory.apply(42);
 		System.out.println("6: " + add421.apply(8));
 		
+		// Curried 3 example
+		// x+y+z
+		Function<Integer, Function<Integer, Function<Integer, Integer>>> plus3 = x->y->z->x+y+z;
+		// Now perfor 1+2+3
+		System.out.println("7: " + plus3.apply(1).apply(2).apply(3));
 	}
 	
 	public static final class Utils {
